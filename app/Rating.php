@@ -11,7 +11,7 @@ class Rating extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'book_id', 'rating'];
+    protected $fillable = ['book_id', 'rating'];
 
     /**
      * A rating belongs to a book
@@ -28,8 +28,8 @@ class Rating extends Model
      *
      * @return Illuminate\Database\Eloquent\Relations\Relation
      */
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    // public function user()
+    // {
+    //     return $this->belongsTo(User::class);
+    // }
 }

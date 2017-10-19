@@ -17,11 +17,13 @@ class RatingsController extends Controller
      */
     public function store(Request $request)
     {
-        $rating = Rating::create([
-            'user_id' => Auth::id(),
-            'book_id' => $request->book_id,
-            'rating' => $request->rating,
-        ]);
+        // $rating = Rating::create([
+        //     'user_id' => Auth::id(),
+        //     'book_id' => $request->book_id,
+        //     'rating' => $request->rating,
+        // ]);
+        
+        $rating = Rating::create($request->all());
 
         return new RatingResource($rating);
     }

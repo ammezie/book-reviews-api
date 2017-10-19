@@ -2,12 +2,13 @@
 
 namespace App;
 
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -32,8 +33,8 @@ class User extends Authenticatable
      *
      * @return Illuminate\Database\Eloquent\Relations\Relation
      */
-    public function rating()
-    {
-        return $this->hasOne(Rating::class);
-    }
+    // public function rating()
+    // {
+    //     return $this->hasOne(Rating::class);
+    // }
 }
