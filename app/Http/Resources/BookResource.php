@@ -2,13 +2,13 @@
 
 namespace App\Http\Resources;
 
-use App\Rating;
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use App\Book;
+use Illuminate\Http\Resources\Json\Resource;
 
-class BookCollection extends ResourceCollection
+class BookResource extends Resource
 {
     /**
-     * Transform the resource collection into an array.
+     * Transform the resource into an array.
      *
      * @param  \Illuminate\Http\Request
      * @return array
@@ -19,9 +19,10 @@ class BookCollection extends ResourceCollection
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
-            'ratings' => Rating::collection($this->whenLoaded('ratings')),
+            'average_rating' => $this->averageRating(),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'ratings' => $this->ratings,
         ];
     }
 }

@@ -22,4 +22,23 @@ class Book extends Model
     {
         return $this->hasMany(Rating::class);
     }
+
+    /**
+     * Calculate the average rating on a book
+     *
+     * @return integer
+     */
+    public function averageRating()
+    {
+        $ratings = $this->ratings;
+
+        if (!$ratings->isEmpty()) {
+            $sum = 0;
+            foreach ($ratings as $rating) {
+                $sum += $rating->rating;
+            }
+
+            return $sum / $ratings->count();
+        }
+    }
 }

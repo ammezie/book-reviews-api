@@ -2,13 +2,12 @@
 
 namespace App\Http\Resources;
 
-use App\Book;
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\Resource;
 
-class RatingCollection extends ResourceCollection
+class RatingResource extends Resource
 {
     /**
-     * Transform the resource collection into an array.
+     * Transform the resource into an array.
      *
      * @param  \Illuminate\Http\Request
      * @return array
@@ -16,12 +15,13 @@ class RatingCollection extends ResourceCollection
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
+            'user_id' => $this->user_id,
             'book_id' => $this->book_id,
             'rating' => $this->rating,
-            'book' => Book::collection($this->whenLoaded('book')),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'user' => $this->user,
+            'book' => $this->book,
         ];
     }
 }
