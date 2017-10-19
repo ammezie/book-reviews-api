@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * A user can rate a book once
+     *
+     * @return Illuminate\Database\Eloquent\Relations\Relation
+     */
+    public function rating()
+    {
+        return $this->hasOne(Rating::class);
+    }
 }

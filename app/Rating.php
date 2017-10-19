@@ -22,4 +22,14 @@ class Rating extends Model
     {
         return $this->belongsTo(Book::class);
     }
+
+    /**
+     * Get the user that owns the rating
+     *
+     * @return Illuminate\Database\Eloquent\Relations\Relation
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
