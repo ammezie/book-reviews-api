@@ -11,7 +11,17 @@ class Book extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'description'];
+    protected $fillable = ['user_id', 'title', 'description'];
+
+    /**
+     * A book is belongs to a user
+     *
+     * @return Illuminate\Database\Eloquent\Relations\Relation
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     /**
      * A book a can have many ratings

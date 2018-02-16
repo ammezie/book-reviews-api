@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources;
 
-use App\Book;
 use Illuminate\Http\Resources\Json\Resource;
 
 class BookResource extends Resource
@@ -20,8 +19,9 @@ class BookResource extends Resource
             'title' => $this->title,
             'description' => $this->description,
             'average_rating' => $this->averageRating(),
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'created_at' => (string) $this->created_at,
+            'updated_at' => (string) $this->updated_at,
+            'user' => $this->user,
             'ratings' => $this->ratings,
         ];
     }

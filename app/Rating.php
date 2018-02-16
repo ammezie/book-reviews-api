@@ -11,7 +11,7 @@ class Rating extends Model
      *
      * @var array
      */
-    protected $fillable = ['book_id', 'rating'];
+    protected $fillable = ['book_id', 'user_id', 'rating'];
 
     /**
      * A rating belongs to a book

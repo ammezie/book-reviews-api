@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +12,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('register', 'AuthController@register');
+Route::post('login', 'AuthController@login');
 
 // Books
-Route::resource('books', 'BooksController');
-
+Route::apiResource('books', 'BookController');
 // Ratings
-Route::resource('ratings', 'RatingsController');
+Route::post('books/{book}/ratings', 'RatingController@store')->middleware('auth:api');
