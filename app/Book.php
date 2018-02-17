@@ -44,6 +44,7 @@ class Book extends Model
 
         if (!$ratings->isEmpty()) {
             $sum = 0;
+
             foreach ($ratings as $rating) {
                 $sum += $rating->rating;
             }

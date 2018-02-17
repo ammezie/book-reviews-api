@@ -20,7 +20,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        return BookResource::collection(Book::with('ratings')->get());
+        return BookResource::collection(Book::with('ratings')->paginate(25));
     }
 
     /**
