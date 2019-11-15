@@ -12,10 +12,14 @@
 |
 */
 
+//Auth
 Route::post('register', 'AuthController@register');
 Route::post('login', 'AuthController@login');
+Route::post('logout', 'AuthController@logout');
+Route::get('user', 'AuthController@getAuthUser');
 
 // Books
 Route::apiResource('books', 'BookController');
 // Ratings
 Route::post('books/{book}/ratings', 'RatingController@store')->middleware('auth:api');
+

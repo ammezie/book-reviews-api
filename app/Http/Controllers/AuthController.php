@@ -55,7 +55,20 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth()->factory()->getTTL() * 60000
         ]);
+    }
+
+    //find current user
+    public function getAuthUser(Request $request)
+    {
+        return response()->json(auth()->user());
+    }
+    
+    //logout
+    public function logout()
+    {
+        auth()->logout();
+        return response()->json(['message' => 'Successfully logged out'], 200);
     }
 }
