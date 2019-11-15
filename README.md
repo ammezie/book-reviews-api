@@ -14,4 +14,8 @@ php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServicePro
 
 php artisan jwt:secret
 
+php artisan migrate
+
+php artisan serve
+
 php artisan route:list to view all applicable routes and their methods
