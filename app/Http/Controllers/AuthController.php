@@ -62,7 +62,11 @@ class AuthController extends Controller
     //find current user
     public function getAuthUser(Request $request)
     {
+        if (!auth()->user()) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
         return response()->json(auth()->user());
+       
     }
     
     //logout
