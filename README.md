@@ -19,3 +19,5 @@ php artisan migrate
 php artisan serve
 
 php artisan route:list to view all applicable routes and their methods
+
+vendor/bin/phpunit to run tests

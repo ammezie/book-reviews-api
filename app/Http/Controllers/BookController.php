@@ -31,6 +31,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+        
         $book = Book::create([
             'user_id' => auth()->user()->id,
             'title' => $request->title,

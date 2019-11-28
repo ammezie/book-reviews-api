@@ -13,13 +13,15 @@
 */
 
 //Auth
-Route::post('register', 'AuthController@register');
-Route::post('login', 'AuthController@login');
+Route::post('register', 'AuthController@register')->name('api.register');
+Route::post('login', 'AuthController@login')->name('api.authenticate');
 Route::post('logout', 'AuthController@logout');
 Route::get('user', 'AuthController@getAuthUser');
+Route::get('users', 'AuthController@index');
 
 // Books
 Route::apiResource('books', 'BookController');
+Route::get('books', 'BookController@index')->name('books.all');
 // Ratings
-Route::post('books/{book}/ratings', 'RatingController@store')->middleware('auth:api');
+Route::post('books/{book}/ratings', 'RatingController@store')->middleware('auth:api')->name('book.create');
 
