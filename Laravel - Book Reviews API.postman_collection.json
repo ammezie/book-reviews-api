@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "c0a85fcd-13e3-4ce3-967c-1dee202f53ad",
+		"name": "Laravel - Book Reviews API",
+		"description": "Laravel - Book Reviews API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Uzumaki Naruto\",\n\t\"email\": \"uzumaki_naruto@konohagakure.co.jp\",\n\t\"password\": \"naruto\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "Register New User"
+			},
+			"response": []
+		},
+		{
+			"name": "User Login ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"uzumaki_naruto@konohagakure.co.jp\",\n\t\"password\": \"naruto\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "User Login "
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU4OTA3NjA5OCwiZXhwIjoxNTg5MDc5Njk4LCJuYmYiOjE1ODkwNzYwOTgsImp0aSI6IlB5MkNKcmtuN3lON2tTTk0iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.3qExs0fIViol8Bm64ZczEiiAr5XAjgWVCoy3sWzCJ4o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"Belajar Laravel Mudah\",\n\t\"description\": \"Belajar Laravel Mudah description\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books"
+					]
+				},
+				"description": "Add New Book"
+			},
+			"response": []
+		},
+		{
+			"name": "Get List Books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU4OTA3NjA5OCwiZXhwIjoxNTg5MDc5Njk4LCJuYmYiOjE1ODkwNzYwOTgsImp0aSI6IlB5MkNKcmtuN3lON2tTTk0iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.3qExs0fIViol8Bm64ZczEiiAr5XAjgWVCoy3sWzCJ4o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books"
+					]
+				},
+				"description": "Get List Books"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU4OTA3NjA5OCwiZXhwIjoxNTg5MDc5Njk4LCJuYmYiOjE1ODkwNzYwOTgsImp0aSI6IlB5MkNKcmtuN3lON2tTTk0iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.3qExs0fIViol8Bm64ZczEiiAr5XAjgWVCoy3sWzCJ4o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Belajar Python Mudah - Updated\",\n    \"description\": \"Belajar Python Mudah description - Updated\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/books/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"4"
+					]
+				},
+				"description": "Update a Book"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Book Rating",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU4OTA3NjA5OCwiZXhwIjoxNTg5MDc5Njk4LCJuYmYiOjE1ODkwNzYwOTgsImp0aSI6IlB5MkNKcmtuN3lON2tTTk0iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.3qExs0fIViol8Bm64ZczEiiAr5XAjgWVCoy3sWzCJ4o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rating\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/books/4/ratings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"4",
+						"ratings"
+					]
+				},
+				"description": "Add Book Rating"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
